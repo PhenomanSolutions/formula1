@@ -7,11 +7,7 @@
     $rootScope.$watch(function () { return $mdMedia('xs') || $mdMedia('sm'); }, function (val) {
         $rootScope.compactNav = val;
     });
-
-    //TODO: remove this lines for final product
-    window.loaded = true;
-    $rootScope.isLoading = false;
-
+    
     $timeout(function () {
         checkPageReady($timeout, $rootScope, function () {
             return !!jQuery & !!window.loaded;

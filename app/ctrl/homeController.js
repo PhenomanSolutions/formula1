@@ -38,6 +38,7 @@
     function loadDriversList(fromYear, toYear) { //making reusable loafing function with correct animation
         toggleLoadingAnimation(true); //turn on loading animation
 
+        window.loaded = true;
         driversService.getWinnersList(fromYear, toYear)
             .then(function (data) {
                 $rootScope.driversData = data.map(WinnerModel.create); //creating driver models from JSON, saving data but not showing

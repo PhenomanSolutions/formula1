@@ -14,7 +14,7 @@
         
         function loadSeasonInfo(season) {
             $scope.loaded = false;
-
+            window.loaded = true;
             driversService.getSeasonWinners(season)
                 .then(function (data) {
                     $scope.seasonInfo = data.map(RaceWinnerModel.create); //creating driver models from JSON, saving data but not showing
