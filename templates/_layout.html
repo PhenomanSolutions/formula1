@@ -1,0 +1,14 @@
+﻿<div layout="row" layout-fill flex>
+    <!--filling LEFT MENU views-->
+    <div layout="column">
+        <div ui-view="leftbar" flex></div>
+    </div>
+    <div layout="column" layout-fill flex>
+        <!--Leaving HEADER fixed-->
+        <div ui-view="header"></div>
+        <!--Making ONLY content scrollable-->
+        <md-content flex>
+            <div ui-view="content" layout-fill></div>
+        </md-content>
+    </div>
+</div>

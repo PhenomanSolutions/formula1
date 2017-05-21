@@ -1,0 +1,62 @@
+﻿/*Defining global default values*/
+/*!default means you can override it wherever you want*/
+$formula-search-bg: #43545d !default;
+$formula-search-active-bg: rgba(255,255,255,0.9) !default;
+$formula-search-color: #546E7A !default;
+$formula-search-icon-color: #75756d !default;
+$formula-search-font-size: 14px !default;
+$formula-search-height: 40px !default;
+$formula-search-transition: all .5s !default;
+$formula-search-font: Roboto,"Helvetica Neue",sans-serif !default;
+
+/*mixin for creating "formula-search-input" item style, passing UI value will make your own theme*/
+@mixin formula-search-input( 
+        $ui: 'default', 
+        $formula-search-bg: $formula-search-bg, 
+        $formula-search-active-bg: $formula-search-active-bg, 
+        $formula-search-color: $formula-search-color, 
+        $formula-search-icon-color: $formula-search-icon-color, 
+        $formula-search-font-size: $formula-search-font-size,
+        $formula-search-height: $formula-search-height,
+        $formula-search-transition: $formula-search-transition,
+        $formula-search-font: $formula-search-font) {
+
+    formula-search-input.#{$ui} {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        border-radius: 5px;
+
+        .search-input {
+            background: $formula-search-bg;
+            border: none;
+            box-shadow: none;
+            box-sizing: border-box;
+            color: $formula-search-color;
+            font-size: $formula-search-font-size;
+            height: $formula-search-height;
+            width: 100%;
+            text-shadow: none;
+            padding-left: 35px;
+            font-family: $formula-search-font;
+            transition: $formula-search-transition;
+        }
+
+        .search-input:focus, .search-input:hover {
+            outline: none;
+            background: $formula-search-active-bg;
+        }
+
+        i {
+            position: absolute;
+            left: 8px;
+            top: 0;
+            line-height: $formula-search-height !important; //ICON vertical center
+            font-size: $formula-search-font-size + ($formula-search-font-size*0.5) !important; //ICON 50% bigger than text
+            color: $formula-search-icon-color;
+        }
+    }
+}
+
+/*Generating Default theme*/
+@include formula-search-input();

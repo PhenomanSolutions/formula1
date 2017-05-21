@@ -1,0 +1,28 @@
+﻿<md-sidenav 
+    layout-fill
+    id="leftNav"
+    class="md-sidenav-left tint"
+    ng-class="{'mini': compactNav }"
+    md-component-id="leftNav"
+    md-disable-backdrop
+    md-is-locked-open="true">
+
+    <md-toolbar class="md-hue-2">
+        <h1 class="md-toolbar-tools">
+            <img alt="logo" class="logo" src="/images/logo.png"/>
+            <span class="title">Formula Info</span>
+        </h1>
+    </md-toolbar>
+
+    <md-content>
+        <ul>
+            <li>
+                <menu-link compact="compactNav" icon-cls="fa-home" active="activeMenu == 'home'" text="Home" sref="home"></menu-link>                
+            </li>
+            <li>
+                <menu-link compact="compactNav" icon-cls="fa-info-circle" active="activeMenu == 'about'" text="About" sref="about"></menu-link>
+            </li>
+        </ul>
+    </md-content>
+
+</md-sidenav>

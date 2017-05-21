@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<!--[if lte IE 9]>
+<html lang="en" ng-app="APP" class="old-ie"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en" ng-app="APP">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title ng-bind="appTitle">Formula 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--[if gt IE 9 | !IE ]><!-->
+        <link href="prod/styles/styles.min.css" rel="stylesheet" />
+    <!--<![endif]-->
+</head>
+<body>
+    <!--[if lte IE 9]>
+    <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">
+            upgrade
+            your browser
+        </a> to improve your experience.
+    </p>
+    <![endif]-->
+
+    <!--[if gt IE 9 | !IE ]><!-->
+    <base href="/">
+    <!--APPLICATION-->
+    <script type="text/javascript" src="prod/scripts/app.min.js"></script>
+    <page-loader flag="isLoading" latency="500">
+        <win-loading></win-loading>
+    </page-loader>
+
+    <!--BODY-->
+    <div ui-view="main" layout="column" layout-fill></div>
+    <!--<![endif]-->
+</body>
+</html>

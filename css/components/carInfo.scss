@@ -1,0 +1,29 @@
+﻿//Car manufacturers LOGOS
+.car-info {
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    &.ferrari {
+        background-image: url('/images/car_man/ferrari.png');
+    }
+
+    &.renault {
+        background-image: url('/images/car_man/renault.png');
+    }
+
+    &.mclaren {
+        background-image: url('/images/car_man/mclaren.png');
+    }
+
+    &.mercedes {
+        background-image: url('/images/car_man/merc.png');
+    }
+
+    &.redbull {
+        background-image: url('/images/car_man/redbull.png');
+    }
+
+    &.brawn {
+        background-image: url('/images/car_man/brawn.png');
+    }
+}

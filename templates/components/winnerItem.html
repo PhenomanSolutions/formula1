@@ -1,0 +1,34 @@
+﻿<div layout="row" layout-fill flex class="winner-item" layout-padding>
+    <div ng-if="itemData.manufacturer" class="bg car-info {{itemData.manufacturer.logo}}"></div>
+
+    <div layout="column" class="icon-container">
+        <i class="icon-round flag-icon flag-icon-{{itemData.flagPrefix}}"></i>
+    </div>
+    <div layout="column" flex>
+        <md-content flex>
+            <h3 class="title">{{itemData.fullName()}} ({{itemData.year}})</h3>
+            <h5 class="sub-title">Born: {{itemData.dateOfBirth}}</h5>
+            <h5 class="sub-title">Wins: {{itemData.wins}}, points: {{itemData.points}}, rounds: {{itemData.round}}</h5>
+
+            <div ng-if="itemData.manufacturer" class="info-section">
+                <label>Car info</label>
+
+                <h5 class="sub-title">
+                    Manucaturer:
+                    <a ng-href="{{itemData.manufacturer.info}}" target="_blank">
+                        <i class="fa fa-external-link" aria-hidden="true"></i>
+                        {{itemData.manufacturer.name}}
+                    </a>
+                </h5>
+            </div>
+        </md-content>
+
+        <div layout="row" class="buttons" layout-align="end center">
+            <md-button ng-href="{{itemData.infoUrl}}" target="_blank" class="md-raised">
+                <i class="fa fa-external-link" aria-hidden="true"></i>
+                Biography
+            </md-button>
+            <md-button class="md-raised md-primary md-hue-2" ui-sref="details({driverId: '{{itemData.id}}', seasonId: {{itemData.year}} })">Season Info</md-button>
+        </div>
+    </div>
+</div>

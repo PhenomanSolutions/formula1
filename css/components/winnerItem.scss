@@ -1,0 +1,92 @@
+﻿/*Defining global default values*/
+/*!default means you can overrid it wherever you want*/
+$winner-item-icon-size: 70px !default;
+$winner-item-title-color: #000 !default;
+$winner-item-subtitle-color: #808080 !default;
+
+/*mixin for creating winner-item item style, passing UI value will make your own theme*/
+@mixin winner-item(
+    $ui: 'default', 
+    $winner-item-icon-size: $winner-item-icon-size, 
+    $winner-item-title-color: $winner-item-title-color, 
+    $winner-item-subtitle-color: $winner-item-subtitle-color) {
+    .winner-item.#{$ui} {
+        box-sizing: border-box;
+        /*Later to be able to put BG absolute overlay*/
+        position: relative;
+        overflow: hidden;
+
+        button.md-button,
+        a.md-button {
+            min-width: 110px;
+        }
+
+        md-content {
+            background: transparent;
+        }
+
+        .bg {
+            background-size: 100%;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.1;
+            box-sizing: border-box;
+            -webkit-filter: blur(5px);
+            -moz-filter: blur(5px);
+            -o-filter: blur(5px);
+            -ms-filter: blur(5px);
+            filter: blur(5px);
+        }
+
+        & div[layout] {
+            box-sizing: content-box;
+            padding: 0;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .title {
+            color: $winner-item-title-color;
+        }
+
+        .sub-title {
+            color: $winner-item-subtitle-color;
+        }
+
+        .info-section {
+            margin-top: 5px;
+
+            label {
+                font-size: 10px;
+                color: #ababab;
+                width: 100%;
+                display: inline-block;
+                border-bottom: 1px solid #cacaca;
+            }
+
+            a {
+                text-decoration: none;
+            }
+        }
+
+        .icon-container {
+            width: $winner-item-icon-size;
+            margin-right: 5px;
+
+            i.icon-round {
+                width: $winner-item-icon-size;
+                height: $winner-item-icon-size;
+                background-size: cover;
+                border-radius: $winner-item-icon-size;
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+/*Generating Default theme*/
+@include winner-item();

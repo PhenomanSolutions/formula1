@@ -1,0 +1,78 @@
+﻿/*Defining global default values*/
+/*!default means you can override it wherever you want*/
+$menu-link-height: 70px !default;
+$menu-link-text-size: 20px !default;
+$menu-link-icon-size: 30px !default;
+$menu-link-active-bg: #DEDEDE !default;
+$menu-link-font: Roboto,"Helvetica Neue",sans-serif !default;
+
+$menu-link-text-color: #fff !default;
+$menu-link-icon-color: #fff !default;
+
+$menu-link-text-active-color: #637782 !default;
+$menu-link-icon-active-color: #637782 !default;
+
+/*mixin for creating "menu-link" item style, passing UI value will make your own theme*/
+@mixin menu-link(
+        $ui: 'default', 
+        $menu-link-height: $menu-link-height, 
+        $menu-link-text-size: $menu-link-text-size, 
+        $menu-link-icon-size: $menu-link-icon-size, 
+        $menu-link-active-bg: $menu-link-active-bg, 
+        $menu-link-icon-color: $menu-link-icon-color, 
+        $menu-link-text-active-color: $menu-link-text-active-color,
+        $menu-link-icon-active-color: $menu-link-icon-active-color,
+        $menu-link-font: $menu-link-font) {
+
+    menu-link.#{$ui} {
+        width: 100%;
+        display: block;
+
+        button.md-button, a.md-button {
+            width: 100%;
+            margin: 0;
+            height: $menu-link-height;
+            font-family: $menu-link-font;
+            font-size: $menu-link-text-size;
+            line-height: $menu-link-height;
+            min-width: 50px;
+            box-sizing: border-box;
+            text-align: left;
+            color: $menu-link-text-color;
+
+            i {
+                font-size: $menu-link-icon-size;
+                float: left;
+                margin-right: 10px;
+                color: $menu-link-icon-color;
+                line-height: $menu-link-height;
+            }
+
+            &:not(.compact) {
+                i {
+                    margin-left: 20px;
+                    transition-duration: 0.3s;
+                }
+            }
+
+            &.active {
+                background: $menu-link-active-bg;
+                color: $menu-link-text-active-color;
+
+                i {
+                    color: $menu-link-icon-active-color;
+                }
+            }
+
+            &.compact {
+                i {
+                    margin-left: 15px;
+                    transition-duration: 0.3s;
+                }
+            }
+        }
+    }
+}
+
+/*Generating Default theme*/
+@include menu-link();

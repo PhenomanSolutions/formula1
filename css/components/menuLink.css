@@ -1,0 +1,36 @@
+﻿/*Defining global default values*/
+/*!default means you can override it wherever you want*/
+/*mixin for creating "menu-link" item style, passing UI value will make your own theme*/
+/*Generating Default theme*/
+menu-link.default {
+  width: 100%;
+  display: block; }
+  menu-link.default button.md-button, menu-link.default a.md-button {
+    width: 100%;
+    margin: 0;
+    height: 70px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-size: 20px;
+    line-height: 70px;
+    min-width: 50px;
+    box-sizing: border-box;
+    text-align: left;
+    color: #fff; }
+    menu-link.default button.md-button i, menu-link.default a.md-button i {
+      font-size: 30px;
+      float: left;
+      margin-right: 10px;
+      color: #fff;
+      line-height: 70px; }
+    menu-link.default button.md-button:not(.compact) i, menu-link.default a.md-button:not(.compact) i {
+      margin-left: 20px;
+      transition-duration: 0.3s; }
+    menu-link.default button.md-button.active, menu-link.default a.md-button.active {
+      background: #DEDEDE;
+      color: #637782; }
+      menu-link.default button.md-button.active i, menu-link.default a.md-button.active i {
+        color: #637782; }
+    menu-link.default button.md-button.compact i, menu-link.default a.md-button.compact i {
+      margin-left: 15px;
+      transition-duration: 0.3s; }
+

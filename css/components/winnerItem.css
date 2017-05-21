@@ -1,0 +1,56 @@
+﻿/*Defining global default values*/
+/*!default means you can overrid it wherever you want*/
+/*mixin for creating winner-item item style, passing UI value will make your own theme*/
+/*Generating Default theme*/
+.winner-item.default {
+  box-sizing: border-box;
+  /*Later to be able to put BG absolute overlay*/
+  position: relative;
+  overflow: hidden; }
+  .winner-item.default button.md-button,
+  .winner-item.default a.md-button {
+    min-width: 110px; }
+  .winner-item.default md-content {
+    background: transparent; }
+  .winner-item.default .bg {
+    background-size: 100%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    box-sizing: border-box;
+    -webkit-filter: blur(5px);
+    -moz-filter: blur(5px);
+    -o-filter: blur(5px);
+    -ms-filter: blur(5px);
+    filter: blur(5px); }
+  .winner-item.default div[layout] {
+    box-sizing: content-box;
+    padding: 0; }
+  .winner-item.default h1, .winner-item.default h2, .winner-item.default h3, .winner-item.default h4, .winner-item.default h5, .winner-item.default h6 {
+    margin: 0;
+    padding: 0; }
+  .winner-item.default .title {
+    color: #000; }
+  .winner-item.default .sub-title {
+    color: #808080; }
+  .winner-item.default .info-section {
+    margin-top: 5px; }
+    .winner-item.default .info-section label {
+      font-size: 10px;
+      color: #ababab;
+      width: 100%;
+      display: inline-block;
+      border-bottom: 1px solid #cacaca; }
+    .winner-item.default .info-section a {
+      text-decoration: none; }
+  .winner-item.default .icon-container {
+    width: 70px;
+    margin-right: 5px; }
+    .winner-item.default .icon-container i.icon-round {
+      width: 70px;
+      height: 70px;
+      background-size: cover;
+      border-radius: 70px;
+      overflow: hidden; }
+

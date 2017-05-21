@@ -1,0 +1,13 @@
+﻿<!--ng-switch is not working for this case, multiple directives error-->
+<md-button  ng-if="mode == 'sref-mode'" aria-label="{{text}}" ui-sref="{{sref}}" ng-class="{'active': active, 'compact': compact}">
+    <i ng-if="iconCls" class="fa {{iconCls}}" aria-hidden="true"></i>
+    <span ng-if="compact !== true">{{text}}</span>
+</md-button>
+<md-button ng-if="mode == 'click-mode'" aria-label="{{text}}" ng-click="{{click}}" ng-class="{'active': active, 'compact': compact}">
+    <i ng-if="iconCls" class="fa {{iconCls}}" aria-hidden="true"></i>
+    <span ng-if="compact !== true">{{text}}</span>
+</md-button>
+<md-button ng-if="mode == 'none'" aria-label="{{text}}" ng-class="{'active': active, 'compact': compact}" >
+    <i ng-if="iconCls" class="fa {{iconCls}}" aria-hidden="true"></i>
+    <span ng-if="compact !== true">{{text}}</span>
+</md-button>

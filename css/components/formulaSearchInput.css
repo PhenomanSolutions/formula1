@@ -1,0 +1,33 @@
+﻿/*Defining global default values*/
+/*!default means you can override it wherever you want*/
+/*mixin for creating "formula-search-input" item style, passing UI value will make your own theme*/
+/*Generating Default theme*/
+formula-search-input.default {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 5px; }
+  formula-search-input.default .search-input {
+    background: #43545d;
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #546E7A;
+    font-size: 14px;
+    height: 40px;
+    width: 100%;
+    text-shadow: none;
+    padding-left: 35px;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    transition: all 0.5s; }
+  formula-search-input.default .search-input:focus, formula-search-input.default .search-input:hover {
+    outline: none;
+    background: rgba(255, 255, 255, 0.9); }
+  formula-search-input.default i {
+    position: absolute;
+    left: 8px;
+    top: 0;
+    line-height: 40px !important;
+    font-size: 21px !important;
+    color: #75756d; }
+

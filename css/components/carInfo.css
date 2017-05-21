@@ -1,0 +1,16 @@
+﻿.car-info {
+  background-repeat: no-repeat;
+  background-position: center center; }
+  .car-info.ferrari {
+    background-image: url("/images/car_man/ferrari.png"); }
+  .car-info.renault {
+    background-image: url("/images/car_man/renault.png"); }
+  .car-info.mclaren {
+    background-image: url("/images/car_man/mclaren.png"); }
+  .car-info.mercedes {
+    background-image: url("/images/car_man/merc.png"); }
+  .car-info.redbull {
+    background-image: url("/images/car_man/redbull.png"); }
+  .car-info.brawn {
+    background-image: url("/images/car_man/brawn.png"); }
+
