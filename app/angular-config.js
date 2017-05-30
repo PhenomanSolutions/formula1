@@ -11,13 +11,15 @@ var APP = angular.module('APP',
         roundWinners: 'http://ergast.com/api/f1/{0}/results/1.json'
     })
     .config([
-        '$sceDelegateProvider', 'API_INFO', function ($sceDelegateProvider, API_INFO) {
+        '$sceDelegateProvider', '$httpProvider', 'API_INFO', function ($sceDelegateProvider, $httpProvider, API_INFO) {
             $sceDelegateProvider.resourceUrlWhitelist([
                 // Allow same origin resource loads.
                 'self', '/',
                 // Allow JSONP calls that match this pattern
                 API_INFO.url + '**.json**'
             ]);
+
+            $httpProvider.useApplyAsync(true);
         }
     ])
     .config([

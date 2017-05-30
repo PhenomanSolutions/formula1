@@ -2,7 +2,7 @@
     <md-content>
         <md-toolbar class="md-hue-2">
             <div class="md-toolbar-tools">
-                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleNavMini()">
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="ctrl.toggleNavMini()">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </md-button>
                 
@@ -11,7 +11,7 @@
                                               flex-xs="100"
                                               flex-sm="90"
                                               flex-md="70"
-                                              ng-model='search.text'>
+                                              ng-model='ctrl.searchText'>
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </formula-search-input>
                 </div>

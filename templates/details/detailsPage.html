@@ -1,6 +1,6 @@
 ﻿<section layout="row" layout-fill>
-    <win-loading ng-hide="loaded"></win-loading>
-    <md-content layout-padding ng-show="loaded" layout-fill>
+    <win-loading ng-hide="ctrl.loaded"></win-loading>
+    <md-content layout-padding ng-show="ctrl.loaded" layout-fill>
         
         <md-button ui-sref="home" class="md-raised">
             <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
@@ -31,22 +31,22 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="item in seasonInfo" ng-class="{'highlight': item.driverId == driver}">
+            <tr ng-repeat="item in ctrl.seasonInfo" ng-class="{'highlight': item.driverId == ctrl.driver}">
                 <td>
-                    <a ng-href="{{item.url}}" target="_blank">
+                    <a ng-href="{{::item.url}}" target="_blank">
                         <i class="fa fa-external-link" aria-hidden="true"></i>
-                        {{item.fullName()}}
-                        <i class="flag-icon flag-icon-{{item.flagPrefix}}"></i>
+                        {{::item.fullName()}}
+                        <i class="flag-icon flag-icon-{{::item.flagPrefix}}"></i>
                     </a>
                 </td>
-                <td>{{item.laps}}</td>
-                <td>{{item.raceName}}</td>
-                <td ng-bind="item.status"></td>
-                <td ng-bind="item.time"></td>
+                <td>{{::item.laps}}</td>
+                <td>{{::item.raceName}}</td>
+                <td ng-bind="::item.status"></td>
+                <td ng-bind="::item.time"></td>
                 <td>
-                    <a ng-href="{{item.manufacturer.info}}" target="_blank">
+                    <a ng-href="{{::item.manufacturer.info}}" target="_blank">
                         <i class="fa fa-external-link" aria-hidden="true"></i>
-                        {{item.manufacturer.name}}
+                        {{::item.manufacturer.name}}
                     </a>
                 </td>
             </tr>

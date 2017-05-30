@@ -11,7 +11,8 @@
                 views: {
                     main: {
                         templateUrl: '/templates/_layout.html?_=' + DONT_CHACHE,
-                        controller: 'homeController'
+                        controller: 'homeController',
+                        controllerAs: 'ctrl'
                     },
                     'header@home': {
                         templateUrl: '/templates/home/header.html?_=' + DONT_CHACHE
@@ -30,7 +31,8 @@
                 views: {
                     main: {
                         templateUrl: '/templates/_layout.html?_=' + DONT_CHACHE,
-                        controller: 'detailsController'
+                        controller: 'detailsController',
+                        controllerAs: 'ctrl'
                     },
                     'header@details': {
                         templateUrl: '/templates/shared/header.html?_=' + DONT_CHACHE
@@ -49,7 +51,8 @@
                 views: {
                     main: {
                         templateUrl: '/templates/_layout.html?_=' + DONT_CHACHE,
-                        controller: 'aboutController'
+                        controller: 'aboutController',
+                        controllerAs: 'ctrl'
                     },
                     'header@about': {
                         templateUrl: '/templates/shared/header.html?_=' + DONT_CHACHE

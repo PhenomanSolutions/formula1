@@ -1,11 +1,11 @@
-﻿APP.controller('aboutController', ['$scope', '$rootScope', function ($scope, $rootScope) {
-
+﻿APP.controller('aboutController', ['$rootScope', function ($rootScope) {
+    var $this = this;
     //We dont need Content-Loading animation here
 
-    $scope.activeMenu = 'about'; //Set active page on Left Panel as DOCS
+    $this.activeMenu = 'about'; //Set active page on Left Panel as DOCS
     window.loaded = true;
     //Toggle Left Panel Mini-Mode
-    $scope.toggleNavMini = function () {
+    $this.toggleNavMini = function () {
         $rootScope.compactNav = !$rootScope.compactNav;  //Make Navigation Panel FULL, $rootScope for shareing netween Views
     }
 }]);

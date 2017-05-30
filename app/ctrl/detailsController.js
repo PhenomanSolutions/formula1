@@ -1,27 +1,29 @@
-﻿APP.controller('detailsController', ['$scope', '$stateParams', '$rootScope', 'RaceWinnerModel', 'driversService',
-    function ($scope, $stateParams, $rootScope, RaceWinnerModel, driversService) {
-        $scope.driver = $stateParams['driverId'];
-        $scope.season = $stateParams['seasonId'];
-        $scope.activeMenu = 'home'; //yes HOME, we as driver page should work ONLY if you have selected driver
+﻿APP.controller('detailsController', ['$stateParams', '$rootScope', 'RaceWinnerModel', 'driversService',
+    function ($stateParams, $rootScope, RaceWinnerModel, driversService) {
+        var $this = this;
 
-        $scope.loaded = true; //Turn on animation by default
-        $scope.seasonInfo = []; //setting default value
+        $this.driver = $stateParams['driverId'];
+        $this.season = $stateParams['seasonId'];
+        $this.activeMenu = 'home'; //yes HOME, we as driver page should work ONLY if you have selected driver
+
+        $this.loaded = true; //Turn on animation by default
+        $this.seasonInfo = []; //setting default value
         
         //Toggle Left Panel Mini-Mode
-        $scope.toggleNavMini = function () {
+        $this.toggleNavMini = function () {
             $rootScope.compactNav = !$rootScope.compactNav; //Make Navigation Panel FULL, $rootScope for shareing netween Views
         }
         
         function loadSeasonInfo(season) {
-            $scope.loaded = false;
+            $this.loaded = false;
             window.loaded = true;
             driversService.getSeasonWinners(season)
                 .then(function (data) {
-                    $scope.seasonInfo = data.map(RaceWinnerModel.create); //creating driver models from JSON, saving data but not showing
-                    $scope.loaded = true; //turn on loading animation
+                    $this.seasonInfo = data.map(RaceWinnerModel.create); //creating driver models from JSON, saving data but not showing
+                    $this.loaded = true; //turn on loading animation
                 });
         }
         
         //Load Season Info
-        loadSeasonInfo($scope.season);
+        loadSeasonInfo($this.season);
     }]);
